@@ -63,4 +63,13 @@ app.delete('/comments/:id', (req, res) => {
 });
 
 // 7. create a route to upvote a comment
-app.post('/comments/:id/upvote',
+
+app.post('/comments/:id/upvote', (req, res) => {
+  const comment = comments.find((comment) => comment.id === req.params.id);
+  if (comment) {
+    comment.upvote++;
+    res.status(200).send(comment);
+  } else {
+    res.status(404).send();
+  }
+});
