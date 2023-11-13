@@ -1,4 +1,4 @@
-// Create a web server
+// Create web server
 // 1. create a web server
 // 2. create a route to get all comments
 // 3. create a route to get a single comment
